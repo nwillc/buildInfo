@@ -17,7 +17,9 @@
 buildscript {
     repositories {
         mavenLocal()
-        jcenter()
+        jcenter {
+            url "http://jcenter.bintray.com"
+        }
         maven {
             url "https://plugins.gradle.org/m2/"
         }
@@ -29,13 +31,14 @@ buildscript {
 
 plugins {
     id "groovy"
-    id "com.gradle.plugin-publish" version "0.9.2"
 }
+
+apply plugin: "com.gradle.plugin-publish"
 
 repositories {
     mavenLocal()
     jcenter {
-        url 'http://jcenter.bintray.com'
+        url "http://jcenter.bintray.com"
     }
 }
 

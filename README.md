@@ -7,7 +7,10 @@ to report some of the conditions under which it was built.  The JSON file contai
 Java version information, dependencies, build date etc.  The output file name can be changed, and custom values can be 
 added.
 
-Go to the [Gradle Plugins Site](https://plugins.gradle.org/plugin/com.github.nwillc.buildinfo) for usage info.
+See 
+[![Gradle Plugin Site](http://shields-nwillc.rhcloud.com/shield/gradle_plugin?path=com.github.nwillc&package=buildinfo)]
+(http://shields-nwillc.rhcloud.com/homepage/gradle_plugin?group=com.github.nwillc&package=buildinfo)
+ for usage info.
 
 ## Notes
 
@@ -50,3 +53,4 @@ The above would create the JSON file `src/main/resources/build.json` before each
             "branch": "dev"
         }
     }
+    

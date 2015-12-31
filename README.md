@@ -7,7 +7,7 @@ to report some of the conditions under which it was built.  The JSON file contai
 Java version information, dependencies, build date etc.  The output file name can be changed, and custom values can be 
 added.
 
-Go to the [Gradle Plugins Site](https://plugins.gradle.org/plugin/com.github.nwillc.buildInfo) for usage info.
+Go to the [Gradle Plugins Site](https://plugins.gradle.org/plugin/com.github.nwillc.buildinfo) for usage info.
 
 ## Notes
 

@@ -1,4 +1,1 @@
-language: java
-env:
-- TERM=dumb
-
+language: groovy

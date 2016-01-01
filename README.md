@@ -26,7 +26,7 @@ An example build.gradle snippet incorporating the task would look as follows:
         custom['branch'] = 'dev'
     }
     
-    build.dependsOn buildInfo
+    processResources.dependsOn buildInfo
     
 The above would create the JSON file `src/main/resources/build.json` before each build with contents something like:
 

@@ -18,7 +18,7 @@ The plugin provides the task `buildInfo` which can be invoked:
 
     gradle buildInfo
 
-An example build.gradle snippet incorporating the task would look as follows:
+An example build.gradle snippet configuring the task (it has sane defaults without this) would look as follows:
 
     // The configuration is optional - the plugin has sane defaults
     buildinfo {
@@ -26,7 +26,7 @@ An example build.gradle snippet incorporating the task would look as follows:
         custom['branch'] = 'dev'
     }
     
-    build.dependsOn buildInfo
+    build.dependsOn buildInfo 
     
 The above would create the JSON file `src/main/resources/build.json` before each build with contents something like:
 
@@ -54,3 +54,6 @@ The above would create the JSON file `src/main/resources/build.json` before each
         }
     }
     
+-----
+[![ISC License](http://shields-nwillc.rhcloud.com/shield/tldrlegal?package=ISC)](http://shields-nwillc.rhcloud.com/homepage/tldrlegal?package=ISC)
+[![Build Status](http://shields-nwillc.rhcloud.com/shield/travis-ci?path=nwillc&package=buildInfo)](http://shields-nwillc.rhcloud.com/homepage/travis-ci?path=nwillc&package=buildInfo)

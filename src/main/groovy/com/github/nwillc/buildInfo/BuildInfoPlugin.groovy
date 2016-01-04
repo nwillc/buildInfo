@@ -53,6 +53,6 @@ class BuildInfoPlugin implements Plugin<Project> {
 
     static class Extension {
         String output = Paths.get("src", "main", "resources", "build.json").toString()
-        Map<String,String> custom = new HashMap<>();
+        Map<String,Object> custom = new TreeMap<>();
     }
 }

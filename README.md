@@ -3,14 +3,14 @@ Gradle Build Info Plugin
 
 This plugin will generate a JSON file with Java build information in it. It's intended use is to generate the file
 each build so it can be tucked into the project resources which can be accessed at runtime, for example allowing a server 
-to report some of the conditions under which it was built.  The JSON file contains minimal project information, 
+to report some of the conditions under which the build occurred.  The JSON file contains minimal project information, 
 Java version information, dependencies, build date etc.  The output file name can be changed, and custom values can be 
 added.
 
-See 
+For usage info see: 
 [![Gradle Plugin Site](http://shields-nwillc.rhcloud.com/shield/gradle_plugin?path=com.github.nwillc&package=buildinfo)]
 (http://shields-nwillc.rhcloud.com/homepage/gradle_plugin?group=com.github.nwillc&package=buildinfo)
- for usage info.
+
 
 ## Notes
 
@@ -26,7 +26,7 @@ An example build.gradle snippet configuring the task (it has sane defaults witho
         custom['branch'] = 'dev'
     }
     
-    build.dependsOn buildInfo 
+    processResources.dependsOn buildInfo  // Run each time the resources are updated
     
 The above would create the JSON file `src/main/resources/build.json` before each build with contents something like:
 

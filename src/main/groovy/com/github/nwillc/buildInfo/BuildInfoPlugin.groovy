@@ -27,7 +27,7 @@ class BuildInfoPlugin implements Plugin<Project> {
     void apply(Project project) {
         project.extensions.create("buildinfo", BuildInfoPlugin.Extension)
         project.task('buildInfo') << {
-            def buildInfo = [:]
+            def buildInfo = new TreeMap<String,Object>()
             buildInfo['project.name'] = project.name
             buildInfo['project.version'] = project.version
             buildInfo['builder'] = System.getProperty("user.name")
@@ -36,7 +36,7 @@ class BuildInfoPlugin implements Plugin<Project> {
             buildInfo['java.version'] = System.getProperty("java.version")
             buildInfo['source.compatibility'] = project.sourceCompatibility.toString()
             buildInfo['target.compatibility'] = project.targetCompatibility.toString()
-            def dependencies = []
+            def dependencies = new TreeSet<String>()
             project.sourceSets.main.runtimeClasspath.each { item ->
                 if (item.getName().endsWith(".jar")) {
                     dependencies.add(item.getName())

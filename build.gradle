@@ -49,7 +49,7 @@ dependencies {
 }
 
 group = 'com.github.nwillc'
-version = '0.0.3'
+version = '0.0.4'
 targetCompatibility = "1.6"
 sourceCompatibility = "1.7"
 

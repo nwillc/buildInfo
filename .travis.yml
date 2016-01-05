@@ -1,3 +1,3 @@
 language: groovy
 after_success:
-- "./gradlew -Pgradle.publish.key=${TRAVIS} -Pgradle.publish.secret=${TRAVIS} testProps"
+- "./gradlew -Pgradle.publish.key=${PUBLISH_K} -Pgradle.publish.secret=${PUBLISH_S} jar publishPlugins"

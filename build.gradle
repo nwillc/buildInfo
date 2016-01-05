@@ -49,7 +49,7 @@ dependencies {
 }
 
 group = 'com.github.nwillc'
-version = '0.0.4'
+version = '0.1.0'
 targetCompatibility = "1.6"
 sourceCompatibility = "1.7"
 
@@ -71,7 +71,6 @@ artifacts {
     archives sourcesJar
 }
 
-
 pluginBundle {
     website = 'http://nwillc.github.io/buildInfo/'
     vcsUrl = 'https://github.com/nwillc/buildInfo'
@@ -84,9 +83,4 @@ pluginBundle {
             displayName = 'Gradle build info plugin'
         }
     }
-}
-
-task testProps << {
-    println project.hasProperty('gradle.publish.key')
-    println project.hasProperty('gradle.publish.secret')
 }

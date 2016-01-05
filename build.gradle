@@ -49,7 +49,7 @@ dependencies {
 }
 
 group = 'com.github.nwillc'
-version = '0.1.0'
+version = '0.1.1'
 targetCompatibility = "1.6"
 sourceCompatibility = "1.7"
 
@@ -72,7 +72,7 @@ artifacts {
 }
 
 pluginBundle {
-    website = 'http://nwillc.github.io/buildInfo/'
+    website = 'https://github.com/nwillc/buildInfo'
     vcsUrl = 'https://github.com/nwillc/buildInfo'
     description = 'Gradle plugin to generate a JSON file with Java build information in it.'
     tags = ['build', 'info']

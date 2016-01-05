@@ -85,3 +85,7 @@ pluginBundle {
         }
     }
 }
+
+task testProps << {
+    println project.hasProperty('TRAVIS')
+}

@@ -87,5 +87,6 @@ pluginBundle {
 }
 
 task testProps << {
-    println project.hasProperty('TRAVIS')
+    println project.hasProperty('gradle.publish.key')
+    println project.hasProperty('gradle.publish.secret')
 }

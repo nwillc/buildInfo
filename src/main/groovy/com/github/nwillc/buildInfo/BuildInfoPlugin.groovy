@@ -23,6 +23,8 @@ import org.gradle.api.Project
 import java.nio.file.Paths
 
 class BuildInfoPlugin implements Plugin<Project> {
+    private static final String[] SYSTEM_PROPERTIES = ["user.name", "java.vendor", "java.version", "os.arch", "os.name", "os.version"]
+
     @Override
     void apply(Project project) {
         project.extensions.create("buildinfo", BuildInfoPlugin.Extension)
@@ -30,12 +32,10 @@ class BuildInfoPlugin implements Plugin<Project> {
             def buildInfo = new TreeMap<String,Object>()
             buildInfo['project.name'] = project.name
             buildInfo['project.version'] = project.version
-            buildInfo['builder'] = System.getProperty("user.name")
             buildInfo['build.date'] = new Date()
-            buildInfo['java.vendor'] = System.getProperty("java.vendor")
-            buildInfo['java.version'] = System.getProperty("java.version")
             buildInfo['source.compatibility'] = project.sourceCompatibility.toString()
             buildInfo['target.compatibility'] = project.targetCompatibility.toString()
+            SYSTEM_PROPERTIES.each { buildInfo[it] = System.getProperty(it) }
             def dependencies = new TreeSet<String>()
             project.sourceSets.main.runtimeClasspath.each { item ->
                 if (item.getName().endsWith(".jar")) {

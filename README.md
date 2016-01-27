@@ -31,14 +31,10 @@ An example build.gradle snippet configuring the task (it has sane defaults witho
 The above would create the JSON file `src/main/resources/build.json` before each build with contents something like:
 
     {
-        "project.name": "super-server",
-        "project.version": "1.0.5",
-        "builder": "jenkins",
         "build.date": "2015-12-30T20:13:06+0000",
-        "java.vendor": "Oracle Corporation",
-        "java.version": "1.8.0_60",
-        "source.compatibility": "1.8",
-        "target.compatibility": "1.8",
+        "custom": {
+                    "branch": "dev"
+                },
         "dependencies": [
             "slf4j-jdk14-1.7.13.jar",
             "jetty-server-9.3.2.v20150730.jar",
@@ -48,10 +44,13 @@ The above would create the JSON file `src/main/resources/build.json` before each
             "javax.servlet-api-3.1.0.jar",
             "jetty-http-9.3.2.v20150730.jar",
             "jetty-io-9.3.2.v20150730.jar"
-        ]
-        "custom": {
-            "branch": "dev"
-        }
+        ],
+        "java.vendor": "Oracle Corporation",
+        "java.version": "1.8.0_60",     
+        "project.name": "super-server",
+        "project.version": "1.0.5",
+        "source.compatibility": "1.8",
+        "target.compatibility": "1.8"
     }
     
 -----

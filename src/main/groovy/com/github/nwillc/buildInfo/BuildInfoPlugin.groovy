@@ -28,31 +28,33 @@ class BuildInfoPlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
         project.extensions.create("buildinfo", BuildInfoPlugin.Extension)
-        project.task('buildInfo') << {
-            def buildInfo = new TreeMap<String,Object>()
-            buildInfo['project.name'] = project.name
-            buildInfo['project.version'] = project.version
-            buildInfo['build.date'] = new Date()
-            buildInfo['source.compatibility'] = project.sourceCompatibility.toString()
-            buildInfo['target.compatibility'] = project.targetCompatibility.toString()
-            SYSTEM_PROPERTIES.each { buildInfo[it] = System.getProperty(it) }
-            def dependencies = new TreeSet<String>()
-            project.sourceSets.main.runtimeClasspath.each { item ->
-                if (item.getName().endsWith(".jar")) {
-                    dependencies.add(item.getName())
+        project.task('buildInfo') {
+            doLast {
+                def buildInfo = new TreeMap<String,Object>()
+                buildInfo['project.name'] = project.name
+                buildInfo['project.version'] = project.version
+                buildInfo['build.date'] = new Date()
+                buildInfo['source.compatibility'] = project.sourceCompatibility.toString()
+                buildInfo['target.compatibility'] = project.targetCompatibility.toString()
+                SYSTEM_PROPERTIES.each { buildInfo[it] = System.getProperty(it) }
+                def dependencies = new TreeSet<String>()
+                project.sourceSets.main.runtimeClasspath.each { item ->
+                    if (item.getName().endsWith(".jar")) {
+                        dependencies.add(item.getName())
+                    }
                 }
+                buildInfo['dependencies'] = dependencies
+                if (project.buildinfo.custom.size() > 0) {
+                    buildInfo['custom'] = project.buildinfo.custom
+                }
+                println "Generating " + project.buildinfo.output
+                new File(project.buildinfo.output).write JsonOutput.prettyPrint(JsonOutput.toJson(buildInfo))
             }
-            buildInfo['dependencies'] = dependencies
-            if (project.buildinfo.custom.size() > 0) {
-                buildInfo['custom'] = project.buildinfo.custom
-            }
-            println "Generating " + project.buildinfo.output
-            new File(project.buildinfo.output).write JsonOutput.prettyPrint(JsonOutput.toJson(buildInfo))
         }
     }
 
     static class Extension {
         String output = Paths.get("src", "main", "resources", "build.json").toString()
-        Map<String,Object> custom = new TreeMap<>();
+        Map<String,Object> custom = new TreeMap<>()
     }
 }

@@ -1,5 +1,4 @@
-Gradle Build Info Plugin
-========================
+# Gradle Build Info Plugin
 
 This plugin will generate a JSON file with Java build information in it. It's intended use is to generate the file
 each build so it can be tucked into the project resources which can be accessed at runtime, for example allowing a server 
@@ -7,10 +6,14 @@ to report some of the conditions under which the build occurred.  The JSON file 
 Java version information, dependencies, build date etc.  The output file name can be changed, and custom values can be 
 added.
 
-For usage info see: 
-[![Gradle Plugin Site](http://shields-nwillc.rhcloud.com/shield/gradle_plugin?path=com.github.nwillc&package=buildinfo)]
-(http://shields-nwillc.rhcloud.com/homepage/gradle_plugin?group=com.github.nwillc&package=buildinfo)
+-----
+[![license](https://img.shields.io/github/license/nwillc/fun-jdbc.svg)](https://tldrlegal.com/license/-isc-license)
+[![Plugin](https://img.shields.io/badge/Gradle%20Plugin-latest-green.svg)](https://plugins.gradle.org/plugin/com.github.nwillc.buildinfo)]
+-----
 
+## For Use in Gradle
+
+Go to [Gradle Plugins](https://plugins.gradle.org/plugin/com.github.nwillc.buildinfo).
 
 ## Notes
 
@@ -54,5 +57,3 @@ The above would create the JSON file `src/main/resources/build.json` before each
     }
     
 -----
-[![ISC License](http://shields-nwillc.rhcloud.com/shield/tldrlegal?package=ISC)](http://shields-nwillc.rhcloud.com/homepage/tldrlegal?package=ISC)
-[![Build Status](http://shields-nwillc.rhcloud.com/shield/travis-ci?path=nwillc&package=buildInfo)](http://shields-nwillc.rhcloud.com/homepage/travis-ci?path=nwillc&package=buildInfo)

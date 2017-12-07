@@ -8,7 +8,7 @@ added.
 
 -----
 [![license](https://img.shields.io/github/license/nwillc/fun-jdbc.svg)](https://tldrlegal.com/license/-isc-license)
-[![Plugin](https://img.shields.io/badge/Gradle%20Plugin-latest-green.svg)](https://plugins.gradle.org/plugin/com.github.nwillc.buildinfo)]
+[![Plugin](https://img.shields.io/badge/Gradle%20Plugin-latest-green.svg)](https://plugins.gradle.org/plugin/com.github.nwillc.buildinfo)
 -----
 
 ## For Use in Gradle
